@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Actualités</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Actualités</h1>
+</header>
+
+<div class="menu">
+	<a href="contact.html">Contact</a>
+    <a href="index.html">Accueil</a>
+    <a href="actualites.html">Actualités</a>
+    <a href="apropos.html">À propos</a>
+	<button id="darkToggle"> Dark</button>
+</div>
+
+<div class="container articles-grid">
+
+
+    <div class="article image-hover">
+    <div class="image-wrapper">
+        <img src="images/for-sure.jpg" alt="For sure Macron">
+        <div class="image-overlay">
+            <h3>“For sure” : la phrase qui a buzzé</h3>
+        </div>
+    </div>
+
+    <div class="content">
+        <span class="badge">À LA UNE</span>
+        <p class="date">Publié récemment</p>
+        <p>Une expression devenue virale après un discours très commenté.</p>
+        <a href="article.html">Lire l’article →</a>
+    </div>
+</div>
+
+
+    <div class="article">
+        <img src="images/autre-article.jpg" alt="Autre">
+        <div class="content">
+            <h2>Autre actualité</h2>
+            <p class="date">Publié récemment</p>
+            <p>Un deuxième article pour illustrer le blog.</p>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 - Mon Blog d’Actualités
+</footer>
+<script>
+const toggle = document.getElementById("darkToggle");
+
+// Vérifier si l'utilisateur avait déjà choisi dark mode
+if (localStorage.getItem("darkMode") === "true") {
+    document.body.classList.add("dark");
+    toggle.textContent = "☀️ Light";
+}
+
+toggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    const isDark = document.body.classList.contains("dark");
+    localStorage.setItem("darkMode", isDark);
+    toggle.textContent = isDark ? "☀️ Light" : "🌙 Dark";
+});
+</script>
+
+
+</body>
+</html>

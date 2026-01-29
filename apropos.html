@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>À propos</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>À propos</h1>
+</header>
+
+<div class="menu">
+	<a href="contact.html">Contact</a>
+    <a href="index.html">Accueil</a>
+    <a href="actualites.html">Actualités</a>
+    <a href="apropos.html">À propos</a>
+	<button id="darkToggle"> Dark</button>
+</div>
+
+<div class="container">
+    <h2>Qui sommes-nous ?</h2>
+    <p>Ce site est un projet pour apprendre le développement web.</p>
+    <p>Il s’inspire des vrais sites d’actualité modernes.</p>
+</div>
+
+<footer>
+    © 2026 - Mon Blog d’Actualités
+</footer>
+<script>
+const toggle = document.getElementById("darkToggle");
+
+// Vérifier si l'utilisateur avait déjà choisi dark mode
+if (localStorage.getItem("darkMode") === "true") {
+    document.body.classList.add("dark");
+    toggle.textContent = "☀️ Light";
+}
+
+toggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    const isDark = document.body.classList.contains("dark");
+    localStorage.setItem("darkMode", isDark);
+    toggle.textContent = isDark ? "☀️ Light" : "🌙 Dark";
+});
+</script>
+
+
+</body>
+</html>
